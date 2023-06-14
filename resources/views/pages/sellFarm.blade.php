@@ -294,13 +294,13 @@
                                     </div>
 
                                     <div class="col-md-4">
-                                        <div class="form-group{{ $errors->has('passport') ? ' has-error' : '' }}">
+                                        <div class="form-group{{ $errors->has('farm_photo') ? ' has-error' : '' }}">
                                             <div class="col-sm-12">
-                                                {{ Form::label('passport', 'Student Passport Photo', ['class' => 'control-label required']) }}
-                                                {{ Form::file('passport', null, ['class' => 'form-control', 'placeholder' => '', 'required' => 'required']) }}
-                                                @if ($errors->has('passport'))
+                                                {{ Form::label('farm_photo', 'Farm Photo', ['class' => 'control-label required']) }}
+                                                {{ Form::file('farm_photo', null, ['class' => 'form-control', 'placeholder' => '', 'required' => 'required']) }}
+                                                @if ($errors->has('farm_photo'))
                                                     <span class="help-block">
-                                                        <strong>{{ $errors->first('passport') }}</strong>
+                                                        <strong>{{ $errors->first('farm_photo') }}</strong>
                                                     </span>
                                                 @endif
                                                 <p style="color: grey">document must be less than 2MB in sze</p>
