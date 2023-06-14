@@ -127,6 +127,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-sm-3 col-lg-3">
                         <!--Sparkline Area Chart-->
                         <div class="panel panel-colorful">

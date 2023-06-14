@@ -69,7 +69,7 @@
                         </div>
                         <!--Horizontal Form-->
                         <!--===================================================-->
-                        <form class="form-horizontal" autocomplete="off" method="POST" action=""
+                        <form class="form-horizontal" autocomplete="off" method="POST" action="{{route('create.sell_farm')}}"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="panel-body">
@@ -149,7 +149,7 @@
                                             <select name="gender" class="form-control" id="gender" style="padding: 0.7%;" required>
                                                     <option value="">Select Gender</option>
                                                     @foreach ($gender as $sex)
-                                                        <option value="{{ $sex->gender_id }}">{{ $sex->name }}</option>
+                                                        <option value="{{ $sex->id}}">{{ $sex->name }}</option>
                                                     @endforeach
                                                 </select>
                                                 @if ($errors->has('gender'))
@@ -241,7 +241,7 @@
                                                     style="padding: 0.7%;" required>
                                                     <option value="">Select Region</option>
                                                     @foreach ($region as $data)
-                                                        <option value="{{ $data->region_id }}">{{ $data->name }}
+                                                        <option value="{{ $data->id }}">{{ $data->name }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -261,7 +261,7 @@
                                                     style="padding: 0.7%;" required>
                                                     <option value="">Select district</option>
                                                     @foreach ($district as $data)
-                                                        <option value="{{ $data->district_id }}">{{ $data->name }}
+                                                        <option value="{{ $data->id }}">{{ $data->name }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -281,7 +281,7 @@
                                                     style="padding: 0.7%;" required>
                                                     <option value="">Select Ward</option>
                                                     @foreach ($ward as $data)
-                                                        <option value="{{ $data->ward_id }}">{{ $data->name }}</option>
+                                                        <option value="{{ $data->id }}">{{ $data->name }}</option>
                                                     @endforeach
                                                 </select>
                                                 @if ($errors->has('ward_id'))
@@ -319,7 +319,6 @@
                                     </div>
                                 </div>
                             </div>
-                    </div>
                     </form>
                     <!--===================================================-->
                     <!--End Horizontal Form-->
