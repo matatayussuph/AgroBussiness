@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Create Farm Lease Portifolio')
+@section('title', 'Farm Lease Portifolio')
 
 @section('stylesheets')
     <!--Bootstrap Datepicker [ Required ]-->
@@ -180,7 +180,7 @@
                                         <div class="form-group{{ $errors->has('size') ? ' has-error' : '' }}">
                                             <div class="col-sm-12">
                                                 {{ Form::label('size', 'Name Farm Size in Acres', ['class' => 'control-label required']) }}
-                                                {{ Form::text('size', null, ['class' => 'form-control', 'placeholder' => 'Farm Size', 'required' => 'required']) }}
+                                                {{ Form::number('size', null, ['class' => 'form-control', 'placeholder' => 'Farm Size', 'required' => 'required']) }}
                                                 @if ($errors->has('size'))
                                                     <span class="help-block">
                                                         <strong>{{ $errors->first('size') }}</strong>

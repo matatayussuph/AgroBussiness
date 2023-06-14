@@ -7,8 +7,6 @@
                         <ul id="mainnav-menu" class="list-group">
                             <!--Category name-->
                             <li class="list-header">Menu</li>
-
-                            <!--Menu list item-->
                             <li>
                                 <a href="">
                                     <i class="glyphicon glyphicon-home"></i>
@@ -16,9 +14,23 @@
                                         <strong>Dashboard|Home</strong>
                                     </span>
                                 </a>
-                            </li>
-                            {{-- @if (Auth::user()->role) --}}
-                            <!--Menu list item-->
+                            </li>{{-- 
+                            <li style="margin:10px">
+                                <form class="form-horizontal" autocomplete="off" method="POST" action=""
+                                    enctype="multipart/form-data" >
+                                    @csrf
+                                    <div class="col-md-12">
+                                        <div class="col-sm-12">
+                                            {{ Form::text('Search', null, ['class' => 'form-control', 'placeholder' => 'Search Here']) }}
+                                            @if ($errors->has('Search'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('Search') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </form>
+                            </li> --}}
                             <li class="">
                                 <a href="#">
                                     <i class="glyphicon glyphicon-list-alt"></i>
@@ -30,9 +42,10 @@
 
                                 <!--Submenu-->
                                 <ul class="collapse" style="font-size: 12px!important">
-                                    <li><a href=""><i class="glyphicon glyphicon-folder-open"></i> Buying</a>
+                                    <li><a href=""><i class="glyphicon glyphicon-folder-open"></i> Buying
+                                            Farm</a>
                                     </li>
-                                    <li><a href=""><i class="glyphicon glyphicon-folder-open"></i> Rent</a>
+                                    <li><a href=""><i class="glyphicon glyphicon-folder-open"></i> Rent Farm</a>
                                     </li>
 
                                 </ul>
