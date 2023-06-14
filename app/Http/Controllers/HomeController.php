@@ -2,26 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\FarmLease;
+use App\Models\FarmSelling;
 
 class HomeController extends Controller
 {
-    public function index(){
-        return view('SchoolAdmin.dashboard');
-    }
-    private function create_start_roles(Request $request)
+    public function index()
     {
-        Roles::whereNotNull('name')->delete();
-        $this->create_start_permission($request);
-        $this->status($request);
-
-        $super_admin = Role::create([
-            'name' => 'Super Admin', 'guard_name' => 'web',
-        ]);
-        $super_admin->syncPermissions([
-            'Access all',
-        ]);
-      
+        $data = [];
+        $data['sl'] = FarmSelling::get();
+        $data['ls'] = FarmLease::get();
+        return view('pages.dashboard', $data);
     }
 
 }

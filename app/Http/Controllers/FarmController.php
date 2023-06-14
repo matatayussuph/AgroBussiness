@@ -50,8 +50,7 @@ class FarmController extends Controller
             'Price_Negotiable' => 'required',
             'farm_photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        $imageName = time() . '.' . $request->farm_photo->extension();
-        $request->farm_photo->move(public_path('images'), $imageName);
+        $imageName = time() . '.' . $request->farm_photo->getClientOriginalName();
 
         $query = FarmSelling::create([
             'first_name' => $request->input('first_name'),
@@ -68,6 +67,7 @@ class FarmController extends Controller
             'region_id' => $request->input('region_id'),
             'district_id' => $request->input('district_id'),
             'ward_id' => $request->input('ward_id'),
+            'farm_photo' => $imageName,
             'category_id' => 1,
 
         ]);

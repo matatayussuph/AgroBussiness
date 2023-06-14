@@ -8,7 +8,7 @@
                             <!--Category name-->
                             <li class="list-header">Menu</li>
                             <li>
-                                <a href="">
+                                <a href="{{route('dashboard')}}">
                                     <i class="glyphicon glyphicon-home"></i>
                                     <span class="menu-title">
                                         <strong>Dashboard|Home</strong>

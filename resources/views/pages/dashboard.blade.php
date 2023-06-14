@@ -28,7 +28,7 @@
         }
 
         .form-control {
-            padding:25px;
+            padding: 25px;
             color: #000;
             margin: 10px;
             border-radius: 7px;
@@ -59,9 +59,39 @@
             background-color: #232323 !important;
             color: #fff !important;
         }
-        i{
-    color: #333!important;
-}
+
+        i {
+            color: #333 !important;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
     </style>
 @endsection
 @section('scripts')
@@ -111,114 +141,9 @@
             </div>
             <div class="col-lg-12">
                 <div class="row">
-                    <div class="col-sm-3 col-lg-3">
-                        <!--Sparkline Area Chart-->
-                        <div class="panel panel-colorful">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"> <i class="glyphicon glyphicon-user icon-fw"
-                                        style="color:rgb(255, 255, 255)!important"></i>
-                                    Students</h3>
-                            </div>
-                            <div class="pad-all text-center">
-                                <p>
-                                    Total
-                                </p>
-                                <p class="mar mt-2 bigger-font text-bold">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-3 col-lg-3">
-                        <!--Sparkline Area Chart-->
-                        <div class="panel panel-colorful">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"> <i class="glyphicon glyphicon-trash icon-fw"
-                                        style="color: rgb(255, 255, 255)!important"></i>
-                                    Teachers</h3>
-                            </div>
-                            <div class="pad-all text-center">
-                                <p>
-                                    Total
-                                </p>
-                                <p class="mar mt-2 bigger-font text-bold">
-                                    {{-- {{ $rejected_saccos }} --}}
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-lg-3">
-                        <!--Sparkline Area Chart-->
-                        <div class="panel panel-colorful">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"> <i class="glyphicon glyphicon-retweet icon-fw"
-                                        style="color: rgb(255, 255, 255)!important"></i>
-                                    parents</h3>
-                            </div>
-                            <div class="pad-all text-center">
-                                <p>
-                                    Total
-                                </p>
-                                <p class="mar mt-2 bigger-font text-bold">
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3 col-lg-3">
-                        <!--Sparkline Area Chart-->
-                        <div class="panel panel-colorful">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"> <i class="glyphicon glyphicon-thumbs-up icon-fw"
-                                        style="color:rgb(255, 255, 255)!important"></i>
-                                    Board Member</h3>
-                            </div>
-                            <div class="pad-all text-center">
-                                <p>
-                                    Total
-                                </p>
-                                <p class="mar mt-2 bigger-font text-bold">
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                    {{-- <div class="col-sm-6 col-lg-6">
-                        <!--Sparkline Area Chart-->
-                        <div class="panel panel-colorful">
-                          
-                            <div class="pad-all text-center">
-                                <div class="row">
-                                    <div class="card mb-4">
-                                        <div class="card-header" style="color:#000!important;margin:10px 0px!important;">
-                                            <i class="fas fa-chart-area me-1"></i>
-                                           Saccos Session
-                                        </div>
-                                        <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div> 
-                    <div class="col-sm-6 col-lg-6">
-                        <!--Sparkline Area Chart-->
-                        <div class="panel panel-colorful">                          
-                            <div class="pad-all text-center">
-                                <div class="row">
-                                        <div class="card mb-4">
-                                            <div class="card-header" style="color:#000!important;margin:10px 0px!important;">
-                                                <i class="fas fa-chart-bar me-1"></i>
-                                                Saccos Registration
-                                            </div>
-                                            <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                                    </div>
-                                </div>
-                              </div>
-                        </div>
-                    </div> --}}
-
+                   @foreach ($sl as $item)
+                       {{$item->first_name}}
+                   @endforeach
                 </div>
             </div>
         </div>
