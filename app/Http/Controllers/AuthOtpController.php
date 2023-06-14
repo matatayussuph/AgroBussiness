@@ -107,7 +107,7 @@ class AuthOtpController extends Controller
 
             Auth::login($user);
             $verificationCode->delete();
-            return view('pages.dashboard');
+            return redirect()->route('dashboard');
         }
 
         return redirect()->route('otp.login')->with('error', 'Your Otp is not correct');

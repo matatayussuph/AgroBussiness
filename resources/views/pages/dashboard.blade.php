@@ -41,8 +41,8 @@
         }
 
         .btn-primary {
-            background-color: rgb(255, 255, 255) !important;
-            color: #232323 !important;
+            background-color: rgb(0, 123, 255) !important;
+            color: #ffffff !important;
             margin-left: 10px !important;
             font-weight: bold;
             border: 1px solid white !important;
@@ -81,8 +81,8 @@
             border: none;
             outline: 0;
             padding: 12px;
-            color: white;
-            background-color: #000;
+            color: rgb(0, 0, 0);
+            background-color: #ffffff;
             text-align: center;
             cursor: pointer;
             width: 100%;
@@ -139,17 +139,35 @@
                     </form>
                 </div>
             </div>
-            <div class="col-lg-12">
-                <div class="row">
-                   @foreach ($sl as $item)
-                       {{$item->first_name}}
-                   @endforeach
-                </div>
-            </div>
-        </div>
+            <div id="page-content">
+                <div class="col-lg-12">
+                    <div class="row">
+                        @foreach ($sl as $data)
+                            <div class="col-sm-3 col-lg-3">
+                                <!--Sparkline Area Chart-->
+                                <div class="panel panel-colorful">
+                                    <div>
+                                        <img src="{{json_decode($data->farm_photo)}}" class="img img-rounded img-responsive"
+                                        alt="image" width=";" height="" style="display: block;margin-left: auto;margin-right: auto;padding:5px"/>                                        <h1>{{ $data->known_location }}</h1>
+                                        <p class="price">{{ $data->sell_price }}/= Tsh</p>
+                                        <p>Some text about the jeans..</p>
+                                        <p><button class="btn btn-primary" style="">Add to Cart</button></p>
+                                        {{-- <h3 class="panel-title"> <i class="glyphicon glyphicon-user icon-fw"
+                                                style="color:rgb(255, 255, 255)!important"></i>
+                                            Students</h3> --}}
+                                    </div>
 
-        <!--===================================================-->
-        <!--End page content-->
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <!--===================================================-->
+    <!--End page content-->
     </div>
 @section('chart-scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

@@ -17,14 +17,11 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('pages.dashboard');
-    })->name('dashboard');
-});
+
 Route::get('logout', function () {Auth::logout();return redirect('/');})->name('signout');
 
-Route::get('Admin/Dashboard', '\App\Http\Controllers\HomeController@index')->name('admin.dashboard');
+Route::get('/dashboard', '\App\Http\Controllers\HomeController@index')->name('dashboard');
+
 Route::get('/otp/login', '\App\Http\Controllers\AuthOtpController@login')->name('otp.login');
 Route::post('/otp/generate', '\App\Http\Controllers\AuthOtpController@generate')->name('otp.generate');
 Route::get('/otp/verification/{user_id}', '\App\Http\Controllers\AuthOtpController@verification')->name('otp.verification');
