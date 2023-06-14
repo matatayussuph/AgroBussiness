@@ -177,6 +177,63 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
+                                        <div class="form-group{{ $errors->has('size') ? ' has-error' : '' }}">
+                                            <div class="col-sm-12">
+                                                {{ Form::label('size', 'Name Farm Size in Acres', ['class' => 'control-label required']) }}
+                                                {{ Form::text('size', null, ['class' => 'form-control', 'placeholder' => 'Farm Size', 'required' => 'required']) }}
+                                                @if ($errors->has('size'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('size') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group{{ $errors->has('sell_price') ? ' has-error' : '' }}">
+                                            <div class="col-sm-12">
+                                                {{ Form::label('sell_price', 'Selling Price', ['class' => 'control-label required']) }}
+                                                {{ Form::number('sell_price', null, ['class' => 'form-control', 'placeholder' => 'Price for sell', 'required' => 'required']) }}
+                                                @if ($errors->has('sell_price'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('sell_price') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group{{ $errors->has('location_id') ? ' has-error' : '' }}">
+                                            <div class="col-sm-12">
+                                                {{ Form::label('location_id', 'Location Link', ['class' => 'control-label required']) }}
+                                                {{ Form::text('location_id', null, ['class' => 'form-control', 'placeholder' => 'Google Location', 'required' => 'required']) }}
+                                                @if ($errors->has('location_id'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('location_id') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group{{ $errors->has('Price_Negotiable') ? ' has-error' : '' }}">                                            
+                                            <div class="col-sm-12">
+                                            {{ Form::label('Price_Negotiable', 'Price Negotiable?',  ['class' => 'control-label required']) }}
+                                            <select name="Price_Negotiable" class="form-control" id="Price_Negotiable" style="padding: 0.7%;" required>
+                                                    <option value="">Price Negotiation</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+
+                                                </select>
+                                                @if ($errors->has('Price_Negotiable'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('Price_Negotiable') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="col-md-4">
                                         <div class="form-group{{ $errors->has('region_id') ? ' has-error' : '' }}">
                                             <div class="col-sm-12">
                                                 {{ Form::label('region_id', 'Region', ['class' => 'control-label required']) }}
