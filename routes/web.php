@@ -34,4 +34,4 @@ Route::post('resend/otp/', '\App\Http\Controllers\AuthOtpController@generate')->
 Route::get('Sell/Farm/portifolio', '\App\Http\Controllers\FarmController@selling')->name('sell.farm');
 Route::post('sell/farm/', '\App\Http\Controllers\FarmController@SellFarm')->name('create.class');
 Route::post('lease/farm/', '\App\Http\Controllers\FarmController@LeaseFarm')->name('delete.class');
-Route::get('Lease/farm/', '\App\Http\Controllers\FarmControllerController@lease')->name('lease.farm');
+Route::get('Lease/farm/', '\App\Http\Controllers\FarmController@lease')->name('lease.farm');

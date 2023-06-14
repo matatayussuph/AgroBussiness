@@ -25,6 +25,7 @@ class FarmController extends Controller
         $data = [];
         $data['region'] = Region::get();
         $data['ward'] = Ward::get();
+        $data['gender'] = Gender::get();
         $data['district'] = District::get();
         return view('pages.leaseFarm',$data);
     }

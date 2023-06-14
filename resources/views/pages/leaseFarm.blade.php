@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Create Farm Selling Portifolio')
+@section('title', 'Create Farm Lease Portifolio')
 
 @section('stylesheets')
     <!--Bootstrap Datepicker [ Required ]-->
@@ -51,7 +51,7 @@
         <!--Page Title-->
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <div id="page-title">
-            <h1 class="page-header text-overflow">Sell Farm</h1>
+            <h1 class="page-header text-overflow">Lease Farm</h1>
         </div>
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <!--End page title-->
@@ -65,7 +65,7 @@
                     <div class="panel" style="margin-top:5px;">
                         @include('partials.flash_message')
                         <div class="panel-heading">
-                            <h3 class="panel-title">Create Farm For Sell</h3>
+                            <h3 class="panel-title">Create Farm For Leasing</h3>
                         </div>
                         <!--Horizontal Form-->
                         <!--===================================================-->
