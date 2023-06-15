@@ -32,3 +32,6 @@ Route::get('Sell/Farm/portifolio', '\App\Http\Controllers\FarmController@selling
 Route::post('sell/farm/', '\App\Http\Controllers\FarmController@SellFarm')->name('create.sell_farm');
 Route::post('lease/farm/', '\App\Http\Controllers\FarmController@LeaseFarm')->name('create.lease_farm');
 Route::get('Lease/farm/', '\App\Http\Controllers\FarmController@lease')->name('lease.farm');
+Route::get('Farm/show{id}', '\App\Http\Controllers\FarmController@show')->name("farm.show");
+
+Route::post('consultation/farm/', '\App\Http\Controllers\FarmController@storeConsult')->name('consult.store');

@@ -8,7 +8,7 @@ use App\Models\Region;
 use App\Models\Ward;
 use App\Models\FarmSelling;
 use App\Models\FarmLease;
-
+use App\Models\Consultation;
 use Illuminate\Http\Request;
 
 class FarmController extends Controller
@@ -33,6 +33,16 @@ class FarmController extends Controller
         $data['district'] = District::get();
         return view('pages.leaseFarm', $data);
     }
+    public function consultation()
+    {     
+        return view('pages.consultation');
+    }
+    public function show($id){
+        $data =[];
+        $data['product'] = FarmSelling::find($id);
+       return view('pages.farm_preview',$data);
+    }
+
     public function SellFarm(Request $request)
     {
         // dd($request->all());
@@ -117,6 +127,25 @@ class FarmController extends Controller
         ]);
         if ($query) {
             return back()->with('success', 'A farm For Lease Created successfully');
+        } else {
+            return back()->with('error', 'Something is wrong in your form');
+        }
+    }
+    public function storeConsult(Request $request)
+    {
+        $request->validate([
+            'crop_name' => 'required|string|max:30',
+            'description' => 'required|',
+           
+        ]);
+
+        $query = Consultation::create([
+            'crop_name' => $request->input('crop_name'),
+            'description' => $request->input('description'),
+       
+        ]);
+        if ($query) {
+            return back()->with('success', 'A Consultation details Created successfully');
         } else {
             return back()->with('error', 'Something is wrong in your form');
         }

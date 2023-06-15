@@ -152,11 +152,11 @@
                                             style="display: block;margin-left: auto;margin-right: auto;padding:5px" />
                                         <h3>{{ $data->known_location }}</h3>
                                         <p class="price">{{ $data->sell_price }}/= Tsh</p>
-                                        <p>Size in Acre:{{$data->size}}, Posted By: {{$data->first_name}}</p>
-                                        {{-- <p>Posted By: {{$data->first_name}}</p> --}}
-                                        <p>Contact:{{$data->mobile_no}}</p>
-
-                                        <p><button class="btn btn-primary" style=""> More</button></p>
+                                        <p>Size in Acre:{{ $data->size }}, Posted By: {{ $data->first_name }}</p>
+                                        <p>Contact:{{ $data->mobile_no }}</p>
+                                        <a href="{{ route('farm.show', ['id' => $data->id]) }}" class="btn btn-primary">View
+                                            <i class=""></i></a>
+                                   
 
                                     </div>
 
