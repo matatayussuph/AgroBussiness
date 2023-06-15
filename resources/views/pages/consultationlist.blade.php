@@ -56,7 +56,7 @@
         }
 
         .panel-title {
-            background-color: #232323 !important;
+            background-color: #00be29 !important;
             color: #fff !important;
         }
 
@@ -122,6 +122,7 @@
 
         <div id="page-content">
             <div class="row">
+             
                 <div class="col-lg-12 col-md-12">
                     <form class="form-horizontal" autocomplete="off" method="POST" action=""
                         enctype="multipart/form-data">
@@ -138,31 +139,33 @@
                         </div>
                     </form>
                 </div>
+                <div class="col-md-12" style="text-align: center">
+                    <h5>Owner Info</h5>
+                </div>
             </div>
             <div id="page-content">
                 <div class="col-lg-12">
                     <div class="row">
-                        @foreach ($sl as $data)
-                            <div class="col-sm-3 col-lg-3">
-                                <!--Sparkline Area Chart-->
-                                <div class="panel panel-colorful">
-                                    <div style="text-align: center">
-                                        <img src="{{ asset('anp.jpg') }}" class="img img-rounded img-responsive"
-                                            alt="image" width=";" height=""
-                                            style="display: block;margin-left: auto;margin-right: auto;padding:5px" />
-                                        <h3>{{ $data->known_location }}</h3>
-                                        <p class="price">{{ $data->sell_price }}/= Tsh</p>
-                                        <p>Size in Acre:{{ $data->size }}, Posted By: {{ $data->first_name }}</p>
-                                        <p>Contact:{{ $data->mobile_no }}</p>
-                                        <a href="{{ route('farm.show', ['id' => $data->id]) }}" class="btn btn-primary">View
-                                            <i class=""></i></a>
-                                   
-
-                                    </div>
-
+                        @foreach ($cl as $data)
+                        <div class="col-sm-3 col-lg-3">
+                            <!--Sparkline Area Chart-->
+                            <div class="panel panel-colorful">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"> <i class="glyphicon glyphicon icon-fw"
+                                            style="color:rgb(255, 255, 255)!important"></i>
+                                            {{ $data->crop_name}}</h3>
+                                </div>
+                                <div class="pad-all text-center">
+                                    <p>
+                                        {{$data->min_description }} ..                                      
+                                    </p>
+                                    <p><a href="" class="btn btn-primary">Read More 
+                                        <i class="" ></i></a></p>
+                                    <p class="mar mt-2 bigger-font text-bold">
                                 </div>
                             </div>
-                        @endforeach
+                        </div> 
+                         @endforeach
                     </div>
                 </div>
             </div>

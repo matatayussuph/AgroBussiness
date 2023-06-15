@@ -10,7 +10,7 @@
     <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div>
-        <p class="pad-lft">&#0169; {{date('Y')}} UBX - All right reserved</p>
+        <p class="pad-lft">&#0169; {{date('Y')}} IFM Student - All right reserved</p>
 
     </div>
 

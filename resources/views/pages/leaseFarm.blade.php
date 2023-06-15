@@ -69,15 +69,15 @@
                         </div>
                         <!--Horizontal Form-->
                         <!--===================================================-->
-                        <form class="form-horizontal" autocomplete="off" method="POST" action="{{route('create.lease_farm')}}"
-                            enctype="multipart/form-data">
+                        <form class="form-horizontal" autocomplete="off" method="POST"
+                            action="{{ route('create.lease_farm') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h5>Owner Info</h5>
                                     </div>
-                                        <div class="col-md-4">
+                                    <div class="col-md-4">
                                         <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
                                             <div class="col-sm-12">
                                                 {{ Form::label('first_name', 'First Name', ['class' => 'control-label required']) }}
@@ -143,10 +143,11 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">                                            
+                                        <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
                                             <div class="col-sm-12">
-                                            {{ Form::label('gender', 'Gender',  ['class' => 'control-label required']) }}
-                                            <select name="gender" class="form-control" id="gender" style="padding: 0.7%;" required>
+                                                {{ Form::label('gender', 'Gender', ['class' => 'control-label required']) }}
+                                                <select name="gender" class="form-control" id="gender"
+                                                    style="padding: 0.7%;" required>
                                                     <option value="">Select Gender</option>
                                                     @foreach ($gender as $sex)
                                                         <option value="{{ $sex->id }}">{{ $sex->name }}</option>
@@ -159,7 +160,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="col-md-12">
                                         <h5>Farm Info</h5>
                                     </div>
@@ -216,13 +217,14 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group{{ $errors->has('Price_Negotiable') ? ' has-error' : '' }}">                                            
+                                        <div class="form-group{{ $errors->has('Price_Negotiable') ? ' has-error' : '' }}">
                                             <div class="col-sm-12">
-                                            {{ Form::label('Price_Negotiable', 'Price Negotiable?',  ['class' => 'control-label required']) }}
-                                            <select name="Price_Negotiable" class="form-control" id="Price_Negotiable" style="padding: 0.7%;" required>
+                                                {{ Form::label('Price_Negotiable', 'Price Negotiable?', ['class' => 'control-label required']) }}
+                                                <select name="Price_Negotiable" class="form-control" id="Price_Negotiable"
+                                                    style="padding: 0.7%;" required>
                                                     <option value="">Price Negotiation</option>
-                                                        <option value="Yes">Yes</option>
-                                                        <option value="No">No</option>
+                                                    <option value="Yes">Yes</option>
+                                                    <option value="No">No</option>
 
                                                 </select>
                                                 @if ($errors->has('Price_Negotiable'))
@@ -232,7 +234,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="col-md-4">
                                         <div class="form-group{{ $errors->has('region_id') ? ' has-error' : '' }}">
                                             <div class="col-sm-12">
@@ -328,18 +330,15 @@
             </div>
         </div>
     </div>
-    
+
     <!--===================================================-->
     <!--End page content-->
 @endsection
 
 @section('scripts')
-    <!--Bootstrap Timepicker [ OPTIONAL ]-->
     <script src="{{ asset('assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
 
-    <!--Bootstrap Datepicker [  ]-->
     <script src="{{ asset('assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-    <!--Form Component [ SAMPLE ]-->
-    {{-- <script src="{{asset('assets/js/demo/form-component.js')}}"></script> --}}
+
 
 @endsection

@@ -47,7 +47,6 @@
                                     </li>
                                     <li><a href=""><i class="glyphicon glyphicon-folder-open"></i> Rent Farm</a>
                                     </li>
-
                                 </ul>
                             </li>
                             <li class="">
@@ -61,9 +60,12 @@
 
                                 <!--Submenu-->
                                 <ul class="collapse" style="font-size: 12px!important">
-                                    <li><a href=""><i class="glyphicon glyphicon-folder-open"></i> Farm
+                                    <li><a href="{{route('consultation')}}"><i class="glyphicon glyphicon-folder-open"></i> Farm
                                             Consultation</a>
                                     </li>
+                                    <li><a href="{{route('consultation-list')}}"><i class="glyphicon glyphicon-folder-open"></i> Crop
+                                        Consultation</a>
+                                </li>
                                 </ul>
                             </li>
 
@@ -78,10 +80,7 @@
                                 <ul class="collapse" style="font-size: 12px!important">
                                     <li><a href=""><i class="glyphicon glyphicon-user"></i>User Profile</a>
                                     </li>
-                                </ul>
-                                <ul class="collapse" style="font-size: 12px!important">
-                                    <li><a href=""><i class="glyphicon glyphicon-log-in"></i>Roles</a></li>
-                                </ul>
+                                </ul>                               
                             </li>
                             <li class="">
                                 <a href="#">
@@ -103,40 +102,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="">
-                                <a href="#">
-                                    <i class="glyphicon glyphicon-cog"></i>
-                                    <span class="menu-title">
-                                        <strong>Settings</strong>
-                                    </span>
-                                    <i class="arrow"></i>
-                                </a>
-
-                                <!--Submenu-->
-                                <ul class="collapse" style="font-size: 12px!important">
-                                    {{-- @can('create Role') --}}
-                                    <li><a href=""><i class="glyphicon glyphicon-time"></i>Set idle Timer</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a href="#">
-                                    <i class="glyphicon glyphicon-tasks"></i>
-                                    <span class="menu-title">
-                                        <strong>Audit Trail</strong>
-                                    </span>
-                                    <i class="arrow"></i>
-                                </a>
-                                <!--Submenu-->
-                                <ul class="collapse" style="font-size: 12px!important">
-                                    <li><a href=""><i class="glyphicon glyphicon-eye-open"></i>Audit System
-                                            User</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-                            {{-- @endcan --}}
+                           {{-- @endcan --}}
                             <li class="">
                                 <a href="">
                                     <i class="glyphicon glyphicon-log-out"></i>

@@ -35,3 +35,6 @@ Route::get('Lease/farm/', '\App\Http\Controllers\FarmController@lease')->name('l
 Route::get('Farm/show{id}', '\App\Http\Controllers\FarmController@show')->name("farm.show");
 
 Route::post('consultation/farm/', '\App\Http\Controllers\FarmController@storeConsult')->name('consult.store');
+Route::get('consultation/Farm/view', '\App\Http\Controllers\FarmController@consultation')->name('consultation');
+Route::get('consultation/list/view', '\App\Http\Controllers\FarmController@consultlist')->name('consultation-list');
+Route::get('User/Profile', '\App\Http\Controllers\FarmController@profile')->name("user.profile");

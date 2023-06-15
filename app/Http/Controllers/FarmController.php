@@ -9,7 +9,10 @@ use App\Models\Ward;
 use App\Models\FarmSelling;
 use App\Models\FarmLease;
 use App\Models\Consultation;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class FarmController extends Controller
 {
@@ -37,12 +40,18 @@ class FarmController extends Controller
     {     
         return view('pages.consultation');
     }
+    public function consultlist()
+    {     
+        $data = [];
+        $data['cl'] =Consultation::get();
+        return view('pages.consultationlist',$data);
+    }
     public function show($id){
         $data =[];
         $data['product'] = FarmSelling::find($id);
        return view('pages.farm_preview',$data);
     }
-
+  
     public function SellFarm(Request $request)
     {
         // dd($request->all());
@@ -136,13 +145,15 @@ class FarmController extends Controller
         $request->validate([
             'crop_name' => 'required|string|max:30',
             'description' => 'required|',
-           
+            'min_description' => 'required|',
+
         ]);
 
         $query = Consultation::create([
             'crop_name' => $request->input('crop_name'),
             'description' => $request->input('description'),
-       
+            'min_description' => $request->input('min_description'),
+
         ]);
         if ($query) {
             return back()->with('success', 'A Consultation details Created successfully');

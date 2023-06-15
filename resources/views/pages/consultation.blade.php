@@ -77,7 +77,7 @@
                                     <div class="col-md-12">
                                         <h5>Owner Info</h5>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group{{ $errors->has('crop_name') ? ' has-error' : '' }}">
                                             <div class="col-sm-12">
                                                 {{ Form::label('crop_name', 'Crop Name', ['class' => 'control-label required']) }}
@@ -90,7 +90,20 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
+                                        <div class="form-group{{ $errors->has('min_description') ? ' has-error' : '' }}">
+                                            <div class="col-sm-12">
+                                                {{ Form::label('min_description', 'Crop Name', ['class' => 'control-label required']) }}
+                                                {{ Form::text('min_description', null, ['class' => 'form-control', 'placeholder' => 'Enter Short Description', 'required' => 'required']) }}
+                                                @if ($errors->has('min_description'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('min_description') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
                                         <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                                             <div class="col-sm-12">
                                                 {{ Form::label('description', ' Consultation Details', ['class' => 'control-label required']) }}
