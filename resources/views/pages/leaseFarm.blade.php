@@ -69,7 +69,7 @@
                         </div>
                         <!--Horizontal Form-->
                         <!--===================================================-->
-                        <form class="form-horizontal" autocomplete="off" method="POST" action=""
+                        <form class="form-horizontal" autocomplete="off" method="POST" action="{{route('create.lease_farm')}}"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="panel-body">
@@ -149,7 +149,7 @@
                                             <select name="gender" class="form-control" id="gender" style="padding: 0.7%;" required>
                                                     <option value="">Select Gender</option>
                                                     @foreach ($gender as $sex)
-                                                        <option value="{{ $sex->gender_id }}">{{ $sex->name }}</option>
+                                                        <option value="{{ $sex->id }}">{{ $sex->name }}</option>
                                                     @endforeach
                                                 </select>
                                                 @if ($errors->has('gender'))
@@ -192,7 +192,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group{{ $errors->has('sell_price') ? ' has-error' : '' }}">
                                             <div class="col-sm-12">
-                                                {{ Form::label('sell_price', 'Selling Price', ['class' => 'control-label required']) }}
+                                                {{ Form::label('sell_price', 'Leasing Price', ['class' => 'control-label required']) }}
                                                 {{ Form::number('sell_price', null, ['class' => 'form-control', 'placeholder' => 'Price for sell', 'required' => 'required']) }}
                                                 @if ($errors->has('sell_price'))
                                                     <span class="help-block">
@@ -241,7 +241,7 @@
                                                     style="padding: 0.7%;" required>
                                                     <option value="">Select Region</option>
                                                     @foreach ($region as $data)
-                                                        <option value="{{ $data->region_id }}">{{ $data->name }}
+                                                        <option value="{{ $data->id }}">{{ $data->name }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -261,7 +261,7 @@
                                                     style="padding: 0.7%;" required>
                                                     <option value="">Select district</option>
                                                     @foreach ($district as $data)
-                                                        <option value="{{ $data->district_id }}">{{ $data->name }}
+                                                        <option value="{{ $data->id }}">{{ $data->name }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -281,7 +281,7 @@
                                                     style="padding: 0.7%;" required>
                                                     <option value="">Select Ward</option>
                                                     @foreach ($ward as $data)
-                                                        <option value="{{ $data->ward_id }}">{{ $data->name }}</option>
+                                                        <option value="{{ $data->id }}">{{ $data->name }}</option>
                                                     @endforeach
                                                 </select>
                                                 @if ($errors->has('ward_id'))
@@ -328,7 +328,7 @@
             </div>
         </div>
     </div>
-    </div>
+    
     <!--===================================================-->
     <!--End page content-->
 @endsection

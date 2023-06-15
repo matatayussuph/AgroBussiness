@@ -147,7 +147,7 @@
                                 <!--Sparkline Area Chart-->
                                 <div class="panel panel-colorful">
                                     <div>
-                                        <img src="{{json_decode($data->farm_photo)}}" class="img img-rounded img-responsive"
+                                        <img src="{{asset('anp.jpg')}}" class="img img-rounded img-responsive"
                                         alt="image" width=";" height="" style="display: block;margin-left: auto;margin-right: auto;padding:5px"/>                                        <h1>{{ $data->known_location }}</h1>
                                         <p class="price">{{ $data->sell_price }}/= Tsh</p>
                                         <p>Some text about the jeans..</p>
@@ -164,7 +164,6 @@
                 </div>
               </div>
         </div>
-    </div>
 
     <!--===================================================-->
     <!--End page content-->
